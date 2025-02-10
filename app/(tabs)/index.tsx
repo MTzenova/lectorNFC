@@ -12,7 +12,7 @@ export default function HomeScreen() {
         <Text style={GlobalStyles.textoBody}>ACERQUE SU TARJETA</Text>
         <Pressable onPress={()=>{router.push('/(tabs)/escribir')}}>
         <Image
-          source={require('../assets/images/nfc.png')}
+          source={require('../../assets/images/nfc.png')}
           style={[{ width: 250, height: 250 }]} /></Pressable>
       </View>
       

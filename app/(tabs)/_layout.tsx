@@ -28,11 +28,11 @@ export default function TabLayout() {
           default: {},
         }),
       }}>
-      
       <Tabs.Screen
         name="index"
         options={{
           title: 'Escribir',
+          headerShown: true,
           tabBarIcon: ({ color }) => <Ionicons size={28} name="server" color={color} />,
           headerTitle: () => (
             <View style={GlobalStyles.seccionesHeader}>
@@ -43,6 +43,15 @@ export default function TabLayout() {
               />
             </View>
           ),
+        }}
+      />
+      <Tabs.Screen
+        name="escribir/index"
+        options={{
+          title: 'Escribir',
+          headerShown: true,
+          tabBarIcon: ({ color }) => <Ionicons size={28} name="server" color={color} />,
+          
         }}
       />
       

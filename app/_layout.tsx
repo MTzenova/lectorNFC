@@ -38,15 +38,7 @@ export default function RootLayout() {
           name="index"
           options={{
             headerShown: true,
-            headerTitle: () => (
-              <View style={GlobalStyles.seccionesHeader}>
-                <Text style={GlobalStyles.textoTitulo}>Lector NFC</Text>
-                <Image
-                  source={require('../assets/images/logo.png')}
-                  style={{ width: 40, height: 40 }}
-                />
-              </View>
-            ),
+            
           }}
         />
       </Stack>
