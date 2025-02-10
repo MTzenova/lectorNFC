@@ -12,7 +12,7 @@ const escribir = () => {
         <Text style={[GlobalStyles.textoInfo]}>Información a editar:</Text>
 
         <View style={GlobalStyles.contenedorDatos}>
-            <Image source={require("../../assets/images/imageUsuario.png")} style={{width:200, height:200, alignSelf:'center', marginBottom:30, marginTop:30}}></Image>
+            <Image source={require("../../../assets/images/imageUsuario.png")} style={{width:200, height:200, alignSelf:'center', marginBottom:30, marginTop:30}}></Image>
 
             <View style={GlobalStyles.contendorInput}>
                 <Text style={GlobalStyles.textoEscrbir}>Nombre:</Text>
@@ -31,7 +31,7 @@ const escribir = () => {
 
         </View>
 
-        <Boton label="GUARDAR" link="../index" />
+        <Boton label="GUARDAR" link="../../../" />
         
       </View>
     )
