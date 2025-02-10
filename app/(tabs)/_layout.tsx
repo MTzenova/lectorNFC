@@ -28,28 +28,29 @@ export default function TabLayout() {
           default: {},
         }),
       }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'VOLVER',
-          headerShown: true,
-          tabBarIcon: ({ color }) => <Ionicons size={28} name="arrow-back" color={color} />,
-          headerTitle: () => (
-            <View style={GlobalStyles.seccionesHeader}>
-              <Text style={GlobalStyles.textoTitulo}>Lector NFC</Text>
-              <Image
-                source={require('../../assets/images/logo.png')}
-                style={{ width: 30, height: 30 }}
-              />
-            </View>
-          ),
-          tabBarStyle: { display: 'none' },
-        }}
-      />
-      <Tabs.Screen
-        name="escribir/index"
-        
-      />
+        <Tabs.Screen
+          name="index"
+          options={{
+            title: 'VOLVER',
+            headerShown: true,
+            tabBarIcon: ({ color }) => <Ionicons size={28} name="arrow-back" color={color} />,
+            headerTitle: () => (
+              <View style={{display:'flex',flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+                <Text style={GlobalStyles.textoTitulo}>Lector NFC</Text>
+                <Image
+                  source={require('../../assets/images/logo.png')}
+                  style={{width: 30, height: 30}}
+                />
+              </View>
+            ),
+            headerStyle: GlobalStyles.seccionesHeader,
+            headerTintColor: '#fff', //color texto e iconos de la barra
+            tabBarStyle: { display: 'none' },
+          }}/>
+        <Tabs.Screen
+          name="escribir/index"
+          
+        />
       
     </Tabs>
   );

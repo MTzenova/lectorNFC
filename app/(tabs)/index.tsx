@@ -7,13 +7,16 @@ export default function HomeScreen() {
   return (
     <View style={GlobalStyles.container}>
       
-      
       <View style={[GlobalStyles.containerCentrado]}>
+
         <Text style={GlobalStyles.textoBody}>ACERQUE SU TARJETA</Text>
+
         <Pressable onPress={()=>{router.push('/(tabs)/escribir')}}>
-        <Image
-          source={require('../../assets/images/nfc.png')}
-          style={[{ width: 250, height: 250 }]} /></Pressable>
+          <Image
+            source={require('../../assets/images/nfc.png')}
+            style={[{ width: 250, height: 250 }]}/>
+        </Pressable>
+
       </View>
       
     </View>

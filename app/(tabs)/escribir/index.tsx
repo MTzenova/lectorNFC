@@ -17,7 +17,7 @@ const escribir = () => {
 
         <View style={GlobalStyles.contenedorDatos}>
 
-            <Image source={require("../../../assets/images/imageUsuario.png")} style={{width:200, height:200, alignSelf:'center', marginBottom:30, marginTop:30}}></Image>
+            <Image source={require("../../../assets/images/imageUsuario.png")} style={GlobalStyles.imagenUsuario}></Image>
 
             <View style={GlobalStyles.contendorInput}>
                 <Text style={GlobalStyles.textoEscrbir}>Nombre:</Text>

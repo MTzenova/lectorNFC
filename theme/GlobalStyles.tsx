@@ -45,6 +45,13 @@ contendorInput:{
     marginRight:60,
     marginBottom:20,
 },
+imagenUsuario:{
+    width:200,
+    height:200,
+    alignSelf:'center',
+    marginBottom:30,
+    marginTop:30,
+},
 input: {
     borderRadius: 25,
     borderWidth:2,
@@ -63,6 +70,9 @@ textoInfo:{
     color:Colors.white,
     marginLeft:80,
     marginBottom:25,
+    textShadowColor: Colors.black,
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 1,
 },
 textoEscrbir:{
     fontSize:30,
@@ -78,62 +88,24 @@ containerCentrado:{
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    //backgroundColor: Colors.light.background,
 },
-containerInfo: {
-    alignSelf: 'center',
-    backgroundColor: Colors.white, 
-    width: '80%', 
-    height: '60%',
-    borderRadius: 8, 
-    paddingHorizontal: 16,   
-    marginEnd: '10%'     
-  },
-  seccionesHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: 20,
+seccionesHeader: {
+    width:'100%',
     backgroundColor: Colors.darkGreen,
-    marginTop: 20,
-    width: '100%',
-    
   },
-  icon:{
-    //color: Colors.light.icon,    
-  },
-  textoTitulo:{
+textoTitulo:{
     fontSize: 30,
-    //color: Colors.light.text,
+    color: Colors.white,
     fontWeight: 'bold',
     
   },
  
-  textoBody: {
-    fontSize: 20,
+textoBody: {
+    fontSize: 40,
     color: Colors.white,
     fontWeight: 'bold',
     textShadowColor: Colors.black,
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 1,
   },
-
-  inputTexto:{height: 50,
-    alignSelf: 'center',
-    width: "100%",
-    //borderColor: Colors.light.negro,
-    borderWidth: 1,
-    borderRadius: 100,
-    paddingHorizontal: 10,
-    //backgroundColor: Colors.light.text,
-    marginBottom: 5,
-    marginTop: 25,
-},
-
-imagenPerfil:{
-    width: 60,
-    height: 60,
-    alignSelf: 'center',
-    marginTop: 20,
-},
 })
