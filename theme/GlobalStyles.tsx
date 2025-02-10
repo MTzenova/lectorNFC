@@ -72,7 +72,7 @@ textoEscrbir:{
 //carlos
 container: {
     flex: 1,
-    backgroundColor: Colors.white,
+    backgroundColor: Colors.lightGreen,
     
 },
 containerCentrado:{
@@ -83,7 +83,7 @@ containerCentrado:{
 },
 containerInfo: {
     alignSelf: 'center',
-    //backgroundColor: Colors.light.text, 
+    backgroundColor: Colors.white, 
     width: '80%', 
     height: '60%',
     borderRadius: 8, 
@@ -95,7 +95,7 @@ containerInfo: {
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: 20,
-    //backgroundColor: Colors.light.header,
+    backgroundColor: Colors.darkGreen,
     marginTop: 20,
     
   },
@@ -111,11 +111,11 @@ containerInfo: {
  
   textoBody: {
     fontSize: 20,
-    //color: Colors.light.text,
+    color: Colors.white,
     fontWeight: 'bold',
-    //textShadowColor: 'black',
-    //textShadowOffset: { width: 1, height: 1 },
-    //textShadowRadius: 1,
+    textShadowColor: Colors.black,
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 1,
   },
 
   inputTexto:{height: 50,

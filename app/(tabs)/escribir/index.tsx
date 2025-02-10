@@ -3,15 +3,20 @@ import React from 'react'
 import { GlobalStyles } from '@/theme/GlobalStyles';
 import Boton from '@/components/Boton';
 import { Colors } from '@/theme/Colors';
+import ParallaxScrollView from '@/components/ParallaxScrollView';
+import { IconSymbol } from '@/components/ui/IconSymbol';
 
 
 const escribir = () => {
     return (
+      
+      
       <View style={GlobalStyles.contenedor}>
 
         <Text style={[GlobalStyles.textoInfo]}>Información a editar:</Text>
 
         <View style={GlobalStyles.contenedorDatos}>
+
             <Image source={require("../../../assets/images/imageUsuario.png")} style={{width:200, height:200, alignSelf:'center', marginBottom:30, marginTop:30}}></Image>
 
             <View style={GlobalStyles.contendorInput}>
@@ -31,7 +36,7 @@ const escribir = () => {
 
         </View>
 
-        <Boton label="GUARDAR" link="../../../" />
+        <Boton label="GUARDAR" link="../../../../" />
         
       </View>
     )

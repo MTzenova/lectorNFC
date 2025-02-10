@@ -29,7 +29,7 @@ export default function TabLayout() {
       }}>
       
       <Tabs.Screen
-        name="escribir/index"
+        name="index"
         options={{
           title: 'Escribir',
           tabBarIcon: ({ color }) => <Ionicons size={28} name="server" color={color} />,
