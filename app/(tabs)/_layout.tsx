@@ -1,6 +1,6 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
-import { Platform } from 'react-native';
+import { Platform, View, Text, Image } from 'react-native';
 import { Ionicons} from '@expo/vector-icons'
 import { HapticTab } from '@/components/HapticTab';
 import { IconSymbol } from '@/components/ui/IconSymbol';
@@ -8,6 +8,7 @@ import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { IconSymbolName } from '../../components/ui/IconSymbol';
+import { GlobalStyles } from '@/theme/GlobalStyles';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -33,6 +34,15 @@ export default function TabLayout() {
         options={{
           title: 'Escribir',
           tabBarIcon: ({ color }) => <Ionicons size={28} name="server" color={color} />,
+          headerTitle: () => (
+            <View style={GlobalStyles.seccionesHeader}>
+              <Text style={GlobalStyles.textoTitulo}>Lector NFC</Text>
+              <Image
+                source={require('../../assets/images/logo.png')}
+                style={{ width: 30, height: 30 }}
+              />
+            </View>
+          ),
         }}
       />
       

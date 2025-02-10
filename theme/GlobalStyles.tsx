@@ -73,7 +73,6 @@ textoEscrbir:{
 container: {
     flex: 1,
     backgroundColor: Colors.lightGreen,
-    
 },
 containerCentrado:{
     flex: 1,
@@ -97,13 +96,14 @@ containerInfo: {
     padding: 20,
     backgroundColor: Colors.darkGreen,
     marginTop: 20,
+    width: '100%',
     
   },
   icon:{
     //color: Colors.light.icon,    
   },
   textoTitulo:{
-    fontSize: 20,
+    fontSize: 30,
     //color: Colors.light.text,
     fontWeight: 'bold',
     

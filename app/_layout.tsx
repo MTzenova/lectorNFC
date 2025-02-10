@@ -7,6 +7,8 @@ import { useEffect } from 'react';
 import 'react-native-reanimated';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { View , Text, Image} from 'react-native';
+import { GlobalStyles } from '@/theme/GlobalStyles';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -32,7 +34,21 @@ export default function RootLayout() {
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: true }} />
         <Stack.Screen name="+not-found" />
-        <Stack.Screen name="index" options={{headerShown:false}}></Stack.Screen>
+        <Stack.Screen
+          name="index"
+          options={{
+            headerShown: true,
+            headerTitle: () => (
+              <View style={GlobalStyles.seccionesHeader}>
+                <Text style={GlobalStyles.textoTitulo}>Lector NFC</Text>
+                <Image
+                  source={require('../assets/images/logo.png')}
+                  style={{ width: 40, height: 40 }}
+                />
+              </View>
+            ),
+          }}
+        />
       </Stack>
       <StatusBar style="auto"/>
     </ThemeProvider>
