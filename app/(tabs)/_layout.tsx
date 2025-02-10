@@ -31,9 +31,9 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Escribir',
+          title: 'VOLVER',
           headerShown: true,
-          tabBarIcon: ({ color }) => <Ionicons size={28} name="server" color={color} />,
+          tabBarIcon: ({ color }) => <Ionicons size={28} name="arrow-back" color={color} />,
           headerTitle: () => (
             <View style={GlobalStyles.seccionesHeader}>
               <Text style={GlobalStyles.textoTitulo}>Lector NFC</Text>
@@ -43,16 +43,12 @@ export default function TabLayout() {
               />
             </View>
           ),
+          tabBarStyle: { display: 'none' },
         }}
       />
       <Tabs.Screen
         name="escribir/index"
-        options={{
-          title: 'Escribir',
-          headerShown: true,
-          tabBarIcon: ({ color }) => <Ionicons size={28} name="server" color={color} />,
-          
-        }}
+        
       />
       
     </Tabs>

@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image, Pressable } from 'react-native';
+import { View, Text, Image, Pressable } from 'react-native';
 
 import { GlobalStyles } from '@/theme/GlobalStyles';
 import { router } from 'expo-router';
