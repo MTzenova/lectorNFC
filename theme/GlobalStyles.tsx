@@ -16,6 +16,58 @@ boton:{
     fontWeight:'bold',
     color:Colors.white,
 },
+//pantalla login
+contenedorLogin:{
+    display:'flex',
+    backgroundColor: Colors.lightGreen,
+    alignItems:'center',
+    flex: 1,
+    justifyContent: 'center',
+    width:'100%',
+    height: 100,
+},
+contenedorDatosLogin:{
+    display:'flex',
+    justifyContent: 'center',
+    backgroundColor:Colors.white,
+    width:'80%',
+    borderWidth:3,
+    borderColor:Colors.darkGreen,
+    borderRadius:20,
+    marginBottom:'10%',
+    paddingBottom:'5%',
+    paddingTop:'5%'
+},
+contendorInputLogin:{
+    display:'flex',
+    flexDirection:'column',
+    justifyContent:'space-between',
+    marginLeft:60,
+    marginRight:60,
+    marginBottom:20,
+    width:'100%',
+},
+textoTituloLogin:{
+    fontSize:90,
+    alignSelf:'center',
+    fontWeight:'bold',
+    color:Colors.white,
+    marginBottom:25,
+    textShadowColor: Colors.black,
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 1,
+},
+inputLogin: {
+    borderRadius: 25,
+    borderWidth:2,
+    borderColor:Colors.darkGreen,
+    padding: 13,
+    fontSize: 30,
+    marginBottom: 10,
+    width:'80%',
+    height: 70,
+    backgroundColor: Colors.white,
+},
 //pantalla escribir
 contenedor:{
     display:'flex',
@@ -79,7 +131,7 @@ textoEscrbir:{
     textAlign:'left',
     fontWeight:'bold',
 },
-//carlos
+//pantalla lector tarjeta
 container: {
     flex: 1,
     backgroundColor: Colors.lightGreen,

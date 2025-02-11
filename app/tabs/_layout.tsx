@@ -1,6 +1,6 @@
-import { Tabs } from 'expo-router';
+import { router, Tabs } from 'expo-router';
 import React from 'react';
-import { Platform, View, Text, Image } from 'react-native';
+import { Platform, View, Text, Image, Pressable } from 'react-native';
 import { Ionicons} from '@expo/vector-icons'
 import { HapticTab } from '@/components/HapticTab';
 import { IconSymbol } from '@/components/ui/IconSymbol';
@@ -35,23 +35,16 @@ export default function TabLayout() {
             headerShown: true,
             tabBarIcon: ({ color }) => <Ionicons size={28} name="arrow-back" color={color} />,
             headerTitle: () => (
-              <View style={{display:'flex',flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+              <View style={{display:'flex',flexDirection:'row', justifyContent:'space-between', alignItems:'center',backgroundColor:'red'}}>
                 <Text style={GlobalStyles.textoTitulo}>Lector NFC</Text>
-                <Image
-                  source={require('../../assets/images/logo.png')}
-                  style={{width: 30, height: 30}}
-                />
+                <Image source={require('../../assets/images/logo.png')} style={{width: 30, height: 30}} />
               </View>
             ),
             headerStyle: GlobalStyles.seccionesHeader,
             headerTintColor: '#fff', //color texto e iconos de la barra
             tabBarStyle: { display: 'none' },
           }}/>
-        <Tabs.Screen
-          name="escribir/index"
-          
-        />
-      
+  
     </Tabs>
   );
 }

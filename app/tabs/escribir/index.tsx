@@ -36,7 +36,7 @@ const escribir = () => {
 
         </View>
 
-        <Boton label="GUARDAR" link="../../../../" />
+        <Boton label="GUARDAR" link='../'/>
         
       </View>
     )
