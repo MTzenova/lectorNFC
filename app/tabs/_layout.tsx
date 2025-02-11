@@ -35,16 +35,30 @@ export default function TabLayout() {
             headerShown: true,
             tabBarIcon: ({ color }) => <Ionicons size={28} name="arrow-back" color={color} />,
             headerTitle: () => (
-              <View style={{display:'flex',flexDirection:'row', justifyContent:'space-between', alignItems:'center',backgroundColor:'red'}}>
+              <View style={{display:'flex',flexDirection:'row', justifyContent:'space-between',backgroundColor:'red'}}>
                 <Text style={GlobalStyles.textoTitulo}>Lector NFC</Text>
-                <Image source={require('../../assets/images/logo.png')} style={{width: 30, height: 30}} />
+                <Image source={require('../../assets/images/logo.png')} style={{width: 30, height: 30, alignSelf:'center'}} />
               </View>
             ),
             headerStyle: GlobalStyles.seccionesHeader,
             headerTintColor: '#fff', //color texto e iconos de la barra
             tabBarStyle: { display: 'none' },
           }}/>
-  
+        <Tabs.Screen
+          name="escribir/index"
+          options={{
+            title: 'SALIR',
+            headerShown: true,
+            tabBarIcon: ({ color }) => <Ionicons size={28} name="log-out" color={color} />,
+            headerTitle: () => (
+              <View style={{display:'flex',flexDirection:'row', alignItems:'center'}}>
+                <Text style={GlobalStyles.textoTitulo}>Lector NFC</Text>
+                <Image source={require('../../assets/images/logo.png')} style={{width: 30, height: 30}} />
+              </View>
+            ),
+            headerStyle: GlobalStyles.seccionesHeader,
+            headerTintColor: '#fff', //color texto e iconos de la barra
+          }}/>
     </Tabs>
   );
 }

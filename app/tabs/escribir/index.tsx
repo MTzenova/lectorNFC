@@ -20,20 +20,25 @@ const escribir = () => {
             <Image source={require("../../../assets/images/imageUsuario.png")} style={GlobalStyles.imagenUsuario}></Image>
 
             <View style={GlobalStyles.contendorInput}>
+                <Text style={GlobalStyles.textoEscrbir}>NRE:</Text>
+                <TextInput style={GlobalStyles.input} placeholder='1234567' placeholderTextColor={Colors.lightGrey}></TextInput>
+            </View>
+
+            <View style={GlobalStyles.contendorInput}>
                 <Text style={GlobalStyles.textoEscrbir}>Nombre:</Text>
-                <TextInput style={GlobalStyles.input} placeholder='Antonio'></TextInput>
+                <TextInput style={GlobalStyles.input} placeholder='Antonio' placeholderTextColor={Colors.lightGrey}></TextInput>
             </View>
 
             <View style={GlobalStyles.contendorInput}>
                 <Text style={GlobalStyles.textoEscrbir}>Apellidos:</Text>
-                <TextInput style={GlobalStyles.input} placeholder='Morales García'></TextInput>
+                <TextInput style={GlobalStyles.input} placeholder='Morales García' placeholderTextColor={Colors.lightGrey}></TextInput>
             </View>
 
             <View style={GlobalStyles.contendorInput}>
                 <Text style={GlobalStyles.textoEscrbir}>Grado:</Text>
-                <TextInput style={GlobalStyles.input} placeholder='2ºDAM'></TextInput>
+                <TextInput style={GlobalStyles.input} placeholder='2ºDAM' placeholderTextColor={Colors.lightGrey}></TextInput>
             </View>
-
+            
         </View>
 
         <Boton label="GUARDAR" link='../'/>

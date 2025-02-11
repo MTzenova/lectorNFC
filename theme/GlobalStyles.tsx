@@ -17,6 +17,14 @@ boton:{
     color:Colors.white,
 },
 //pantalla login
+contenedorCabeceraLogin:{
+    display:'flex',
+    backgroundColor:Colors.darkGreen,
+    width:'100%',
+    flexDirection:'column',
+    position:'fixed',
+    top:0,
+},
 contenedorLogin:{
     display:'flex',
     backgroundColor: Colors.lightGreen,
@@ -52,7 +60,7 @@ textoTituloLogin:{
     alignSelf:'center',
     fontWeight:'bold',
     color:Colors.white,
-    marginBottom:25,
+    marginBottom:30,
     textShadowColor: Colors.black,
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 1,
