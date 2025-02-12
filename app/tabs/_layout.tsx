@@ -27,37 +27,75 @@ export default function TabLayout() {
           },
           default: {},
         }),
+        tabBarLabelStyle: GlobalStyles.fuenteFooter
       }}>
         <Tabs.Screen
           name="index"
           options={{
-            title: 'VOLVER',
+            title: 'Volver',
             headerShown: true,
-            tabBarIcon: ({ color }) => <Ionicons size={28} name="arrow-back" color={color} />,
+            tabBarIcon: ({ color }) => <Ionicons size={38} name="arrow-back" color={color}/>,
             headerTitle: () => (
-              <View style={{display:'flex',flexDirection:'row', justifyContent:'space-between',backgroundColor:'red'}}>
-                <Text style={GlobalStyles.textoTitulo}>Lector NFC</Text>
-                <Image source={require('../../assets/images/logo.png')} style={{width: 30, height: 30, alignSelf:'center'}} />
-              </View>
+              <Text style={GlobalStyles.textoTitulo}>Lector NFC</Text>
+            ),
+            headerRight: () => (
+              <Image source={require('../../assets/images/logo.png')} style={{ width: 50, height: 50, marginRight: 10 }} />
             ),
             headerStyle: GlobalStyles.seccionesHeader,
             headerTintColor: '#fff', //color texto e iconos de la barra
             tabBarStyle: { display: 'none' },
+            
           }}/>
-        <Tabs.Screen
+
+          <Tabs.Screen
           name="escribir/index"
           options={{
-            title: 'SALIR',
+            title: 'Escribir',
             headerShown: true,
-            tabBarIcon: ({ color }) => <Ionicons size={28} name="log-out" color={color} />,
+            tabBarIcon: ({ color }) => <Ionicons size={28} name="pencil" color={color}/>,
             headerTitle: () => (
-              <View style={{display:'flex',flexDirection:'row', alignItems:'center'}}>
-                <Text style={GlobalStyles.textoTitulo}>Lector NFC</Text>
-                <Image source={require('../../assets/images/logo.png')} style={{width: 30, height: 30}} />
-              </View>
+              <Text style={GlobalStyles.textoTitulo}>Lector NFC</Text>
+            ),
+            headerRight: () => (
+              <Image source={require('../../assets/images/logo.png')} style={{ width: 50, height: 50, marginRight: 10 }} />
             ),
             headerStyle: GlobalStyles.seccionesHeader,
             headerTintColor: '#fff', //color texto e iconos de la barra
+            tabBarStyle: GlobalStyles.seccionesFooter,
+          }}/>
+
+          <Tabs.Screen
+          name="bbdd/index"
+          options={{
+            title: 'BBDD',
+            headerShown: true,
+            tabBarIcon: ({ color }) => <Ionicons size={28} name="server" color={color}/>,
+            headerTitle: () => (
+              <Text style={GlobalStyles.textoTitulo}>Lector NFC</Text>
+            ),
+            headerRight: () => (
+              <Image source={require('../../assets/images/logo.png')} style={{ width: 50, height: 50, marginRight: 10 }} />
+            ),
+            headerStyle: GlobalStyles.seccionesHeader,
+            headerTintColor: '#fff', //color texto e iconos de la barra
+            tabBarStyle: GlobalStyles.seccionesFooter,
+          }}/>
+
+        <Tabs.Screen
+            name="salir/index"
+            options={{
+            title: 'Salir',
+            headerShown: true,
+            tabBarIcon: ({ color }) => <Ionicons size={28} name="log-out" color={color}/>,
+            headerTitle: () => (
+              <Text style={GlobalStyles.textoTitulo}>Lector NFC</Text>
+            ),
+            headerRight: () => (
+              <Image source={require('../../assets/images/logo.png')} style={{ width: 50, height: 50, marginRight: 10 }} />
+            ),
+            headerStyle: GlobalStyles.seccionesHeader,
+            headerTintColor: '#fff', //color texto e iconos de la barra
+            tabBarStyle: GlobalStyles.seccionesFooter,
           }}/>
     </Tabs>
   );

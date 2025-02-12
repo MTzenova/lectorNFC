@@ -10,9 +10,9 @@ export default function HomeScreen() {
   return (
     <View style={GlobalStyles.contenedorLogin}>
       <View style={GlobalStyles.contenedorCabeceraLogin}>
-        <Image source={require('../assets/images/logo.png')} style={{width: 50, height: 50, alignSelf:'flex-end'}} />
+        <Image source={require('../assets/images/logo.png')} style={{width: 50, height: 50, alignSelf:'center', marginRight:'1%'}} />
 
-        <Text style={GlobalStyles.textoTituloLogin}>LECTOR NFC</Text>
+        <Text style={GlobalStyles.textoTituloLogin}>Lector NFC</Text>
       </View>
       
       <Text style={GlobalStyles.textoInfo}>Iniciar sesión:</Text>
@@ -31,7 +31,10 @@ export default function HomeScreen() {
     
       </View>
     
+    <View style={GlobalStyles.botonLogin}>
       <Boton label="ACCEDER" link='./tabs'/>
+    </View>
+      
             
     </View>
   );

@@ -9,8 +9,7 @@ import { IconSymbol } from '@/components/ui/IconSymbol';
 
 const escribir = () => {
     return (
-      
-      
+    
       <View style={GlobalStyles.contenedor}>
 
         <Text style={[GlobalStyles.textoInfo]}>Información a editar:</Text>
@@ -41,7 +40,10 @@ const escribir = () => {
             
         </View>
 
-        <Boton label="GUARDAR" link='../'/>
+        <View style={GlobalStyles.botonLogin}>
+          <Boton label="GUARDAR" link='../'/>
+        </View>
+        
         
       </View>
     )
