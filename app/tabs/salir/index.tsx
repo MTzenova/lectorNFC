@@ -5,6 +5,7 @@ import Boton from '@/components/Boton';
 import { Colors } from '@/theme/Colors';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { IconSymbol } from '@/components/ui/IconSymbol';
+import { router } from 'expo-router';
 
 
 const salir = () => {
@@ -13,7 +14,9 @@ const salir = () => {
       
       <View style={GlobalStyles.contenedor}>
 
-        <Text>Salir</Text>
+        <Pressable onPress={() => { router.push('../../') }}>
+                          <Text style={GlobalStyles.textoBotonRegistrar}>Salir</Text>
+              </Pressable>
         
       </View>
     )

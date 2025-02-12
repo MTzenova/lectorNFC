@@ -16,8 +16,25 @@ boton:{
     fontWeight:'bold',
     color:Colors.white,
 },
-botonLogin:{
+botonesLogin:{
+    display:'flex',
+    flexDirection:'row-reverse',
+    justifyContent:'space-between',
     width:'80%',
+    alignItems:'center',
+},
+botonGuardar:{
+    display:'flex',
+    width:'80%',
+},
+textoBotonRegistrar:{
+    fontSize:30,
+    textDecorationLine:'underline',
+    fontWeight:'bold',
+    color:Colors.white,
+    textShadowColor: Colors.black,
+    textShadowOffset: { width: 3, height:3 },
+    textShadowRadius: 1,
 },
 //barras
 seccionesHeader: {
@@ -79,7 +96,7 @@ textoTituloLogin:{
     fontWeight:'bold',
     color:Colors.white,
     textShadowColor: Colors.black,
-    textShadowOffset: { width: 1, height: 1 },
+    textShadowOffset: { width: 3, height:3 },
     textShadowRadius: 1,
     width:'100%',
     marginLeft:'2%'
@@ -124,6 +141,14 @@ contendorInput:{
     marginRight:60,
     marginBottom:20,
 },
+contenedorNTarjeta:{
+    display:'flex',
+    flexDirection:'row',
+    alignItems:'center',
+    marginLeft:60,
+    marginRight:60,
+    marginBottom:20,
+},
 imagenUsuario:{
     width:200,
     height:200,
@@ -150,7 +175,7 @@ textoInfo:{
     marginLeft:80,
     marginBottom:25,
     textShadowColor: Colors.black,
-    textShadowOffset: { width: 1, height: 1 },
+    textShadowOffset: { width: 3, height:3 },
     textShadowRadius: 1,
 },
 textoEscrbir:{
@@ -180,9 +205,9 @@ textoBody: {
     color: Colors.white,
     fontWeight: 'bold',
     textShadowColor: Colors.black,
-    textShadowOffset: { width: 1, height: 1 },
+    textShadowOffset: { width: 3, height:3 },
     textShadowRadius: 1,
-    },
+},
 //pantalla bbdd
 
 contenedorBuscarBBDD:{
@@ -197,7 +222,7 @@ textoTituloBBDD:{
     fontWeight:'bold',
     color:Colors.white,
     textShadowColor: Colors.black,
-    textShadowOffset: { width: 1, height: 1 },
+    textShadowOffset: { width: 3, height:3 },
     textShadowRadius: 1,
     marginBottom:40
 },

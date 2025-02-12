@@ -18,6 +18,11 @@ const escribir = () => {
 
             <Image source={require("../../../assets/images/imageUsuario.png")} style={GlobalStyles.imagenUsuario}></Image>
 
+            <View style={GlobalStyles.contenedorNTarjeta}>
+                <Text style={GlobalStyles.textoEscrbir}>Nº Tarjeta:</Text>
+                <Text style={[GlobalStyles.textoEscrbir,{marginLeft:'13%'}]}>A:1:12:B3:4C</Text>
+            </View>
+
             <View style={GlobalStyles.contendorInput}>
                 <Text style={GlobalStyles.textoEscrbir}>NRE:</Text>
                 <TextInput style={GlobalStyles.input} placeholder='1234567' placeholderTextColor={Colors.lightGrey}></TextInput>
@@ -40,7 +45,7 @@ const escribir = () => {
             
         </View>
 
-        <View style={GlobalStyles.botonLogin}>
+        <View style={GlobalStyles.botonGuardar}>
           <Boton label="GUARDAR" link='../'/>
         </View>
         

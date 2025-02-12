@@ -31,8 +31,11 @@ export default function HomeScreen() {
     
       </View>
     
-    <View style={GlobalStyles.botonLogin}>
+    <View style={GlobalStyles.botonesLogin}>
       <Boton label="ACCEDER" link='./tabs'/>
+      <Pressable onPress={() => { router.push('../tabs/escribir') }}>
+                  <Text style={GlobalStyles.textoBotonRegistrar}>Regístrate aquí</Text>
+      </Pressable>
     </View>
       
             
