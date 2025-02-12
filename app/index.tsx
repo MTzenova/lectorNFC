@@ -1,8 +1,6 @@
-import { View, Text, TextInput, Image, Pressable, ScrollView } from 'react-native';
-
+import { View, Text, TextInput, Image, Pressable } from 'react-native';
 import { GlobalStyles } from '@/theme/GlobalStyles';
 import { router } from 'expo-router';
-import Boton from '@/components/Boton';
 import React from 'react';
 import { Colors } from '@/theme/Colors';
 
@@ -32,7 +30,13 @@ export default function HomeScreen() {
       </View>
     
     <View style={GlobalStyles.botonesLogin}>
-      <Boton label="ACCEDER" link='./tabs'/>
+
+     
+          <Pressable onPress={() => { router.push('./tabs') }}>
+            <Text style={[, GlobalStyles.boton]}>ACCEDER</Text>
+          </Pressable>
+      
+
       <Pressable onPress={() => { router.push('../tabs/escribir') }}>
                   <Text style={GlobalStyles.textoBotonRegistrar}>Regístrate aquí</Text>
       </Pressable>
