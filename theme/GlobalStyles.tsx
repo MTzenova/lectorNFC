@@ -6,10 +6,10 @@ export const GlobalStyles =  StyleSheet.create({
 //boton
 boton:{
     width: '100%',
-    height: 80,
+    height: 60,
     textAlign: 'center',
-    padding:20,
-    fontSize: 30,
+    padding:15,
+    fontSize: 20,
     borderRadius: 30,
     borderWidth:2,
     backgroundColor: Colors.darkGreen,
@@ -28,7 +28,7 @@ botonGuardar:{
     width:'80%',
 },
 textoBotonRegistrar:{
-    fontSize:30,
+    fontSize:20,
     textDecorationLine:'underline',
     fontWeight:'bold',
     color:Colors.white,
@@ -38,17 +38,15 @@ textoBotonRegistrar:{
 },
 //barras
 seccionesHeader: {
-    width:'100%',
     backgroundColor: Colors.darkGreen,
-    height:100,
+    height:60,
 },
 seccionesFooter:{
-    height: 80, //
+    height: 60, //
     paddingBottom: 10,
-    paddingTop: 10,
 },
 fuenteFooter:{
-    fontSize:25,
+    fontSize:18,
 },
 //pantalla login
 contenedorCabeceraLogin:{
@@ -56,9 +54,9 @@ contenedorCabeceraLogin:{
     backgroundColor:Colors.darkGreen,
     width:'100%',
     flexDirection:'row-reverse',
-    position:'fixed',
+    position:'absolute',
     top:0,
-    height:100
+    height:60
 },
 contenedorLogin:{
     display:'flex',
@@ -79,26 +77,26 @@ contenedorDatosLogin:{
     borderRadius:20,
     marginBottom:'10%',
     paddingBottom:'5%',
-    paddingTop:'5%'
+    paddingTop:'10%'
 },
 contendorInputLogin:{
     display:'flex',
     flexDirection:'column',
     justifyContent:'space-between',
-    marginLeft:60,
-    marginRight:60,
+    marginLeft:15,
+    marginRight:10,
     marginBottom:20,
-    width:'100%',
+    width:'90%',
 },
 textoTituloLogin:{
-    fontSize:40,
+    fontSize:25,
     alignSelf:'center',
     fontWeight:'bold',
     color:Colors.white,
     textShadowColor: Colors.black,
     textShadowOffset: { width: 3, height:3 },
     textShadowRadius: 1,
-    width:'100%',
+    width:'87%',
     marginLeft:'2%'
 },
 inputLogin: {
@@ -106,10 +104,10 @@ inputLogin: {
     borderWidth:2,
     borderColor:Colors.darkGreen,
     padding: 13,
-    fontSize: 30,
+    fontSize:18,
     marginBottom: 10,
-    width:'80%',
-    height: 70,
+    width:'100%',
+    height: 60,
     backgroundColor: Colors.white,
 },
 //pantalla escribir
@@ -130,58 +128,59 @@ contenedorDatos:{
     borderWidth:3,
     borderColor:Colors.darkGreen,
     borderRadius:20,
-    marginBottom:'8%',
+    marginBottom:'3%',
 },
 contendorInput:{
     display:'flex',
     flexDirection:'row',
     alignItems:'center',
     justifyContent:'space-between',
-    marginLeft:60,
-    marginRight:60,
-    marginBottom:20,
+    marginLeft:20,
+    marginRight:20,
+    marginBottom:10,
 },
 contenedorNTarjeta:{
     display:'flex',
     flexDirection:'row',
     alignItems:'center',
-    marginLeft:60,
+    marginLeft:20,
     marginRight:60,
-    marginBottom:20,
+    marginBottom:10,
 },
 imagenUsuario:{
-    width:200,
-    height:200,
+    width:90,
+    height:90,
     alignSelf:'center',
-    marginBottom:30,
-    marginTop:30,
+    marginBottom:10,
+    marginTop:10,
 },
 input: {
     borderRadius: 25,
     borderWidth:2,
     borderColor:Colors.darkGreen,
-    padding: 13,
-    fontSize: 30,
-    marginBottom: 10,
+    padding: 10,
+    fontSize: 18,
     width:'60%',
-    height: 70,
+    height: 50,
     backgroundColor: Colors.white,
 },
 textoInfo:{
-    fontSize:50,
+    fontSize:25,
     alignSelf:'flex-start',
     fontWeight:'bold',
     color:Colors.white,
-    marginLeft:80,
-    marginBottom:25,
+    marginLeft:40,
+    marginTop:5,
+    marginBottom:10,
     textShadowColor: Colors.black,
     textShadowOffset: { width: 3, height:3 },
     textShadowRadius: 1,
 },
 textoEscrbir:{
-    fontSize:30,
+    fontSize:20,
     textAlign:'left',
     fontWeight:'bold',
+    marginLeft:10,
 },
 //pantalla lector tarjeta
 container: {
@@ -194,47 +193,50 @@ containerCentrado:{
     alignItems: 'center',
 },
 textoTitulo:{
-    fontSize: 40,
+    fontSize: 25,
     color: Colors.white,
     fontWeight: 'bold',
-    alignSelf:'center'
+    alignSelf:'center',
+    textShadowOffset: { width: 3, height:3 },
+    textShadowRadius: 1,
   },
  
 textoBody: {
-    fontSize: 40,
+    fontSize: 30,
     color: Colors.white,
     fontWeight: 'bold',
     textShadowColor: Colors.black,
     textShadowOffset: { width: 3, height:3 },
     textShadowRadius: 1,
+    textAlign:'center'
 },
 //pantalla bbdd
 
 contenedorBuscarBBDD:{
     display:'flex',
     width:'80%',
-    position:'fixed',
-    top:'7%',
+    position:'absolute',
+    top:0
 },
 textoTituloBBDD:{
-    fontSize:50,
+    fontSize:25,
     alignSelf:'center',
     fontWeight:'bold',
     color:Colors.white,
     textShadowColor: Colors.black,
     textShadowOffset: { width: 3, height:3 },
     textShadowRadius: 1,
-    marginBottom:40
+    marginBottom:10
 },
 inputBBDD: {
     borderRadius: 25,
     borderWidth:2,
     borderColor:Colors.darkGreen,
-    padding: 13,
-    fontSize: 30,
+    padding: 10,
+    fontSize: 18,
     marginBottom: 10,
     width:'100%',
-    height: 70,
+    height: 50,
     backgroundColor: Colors.white,
 },
 })

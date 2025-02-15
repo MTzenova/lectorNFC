@@ -26,17 +26,7 @@ const bbdd = () => {
             <Text style={GlobalStyles.textoEscrbir}>Alumnos</Text>
             <Text style={GlobalStyles.textoEscrbir}>Alumnos</Text>
             <Text style={GlobalStyles.textoEscrbir}>Alumnos</Text>
-            <Text style={GlobalStyles.textoEscrbir}>Alumnos</Text>
-            <Text style={GlobalStyles.textoEscrbir}>Alumnos</Text>
-            <Text style={GlobalStyles.textoEscrbir}>Alumnos</Text>
-            <Text style={GlobalStyles.textoEscrbir}>Alumnos</Text>
-            <Text style={GlobalStyles.textoEscrbir}>Alumnos</Text>
-            <Text style={GlobalStyles.textoEscrbir}>Alumnos</Text>
-            <Text style={GlobalStyles.textoEscrbir}>Alumnos</Text>
-            <Text style={GlobalStyles.textoEscrbir}>Alumnos</Text>
-            <Text style={GlobalStyles.textoEscrbir}>Alumnos</Text>
-            <Text style={GlobalStyles.textoEscrbir}>Alumnos</Text>
-            
+          
         </View>
         
       </View>

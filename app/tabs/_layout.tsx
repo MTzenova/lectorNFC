@@ -32,12 +32,12 @@ export default function TabLayout() {
           options={{
             title: 'Volver',
             headerShown: true,
-            tabBarIcon: ({ color }) => <Ionicons size={38} name="arrow-back" color={color}/>,
+            tabBarIcon: ({ color }) => <Ionicons size={23} name="arrow-back" color={color}/>,
             headerTitle: () => (
               <Text style={GlobalStyles.textoTitulo}>Lector NFC</Text>
             ),
             headerRight: () => (
-              <Image source={require('../../assets/images/logo.png')} style={{ width: 50, height: 50, marginRight: 10 }} />
+              <Image source={require('../../assets/images/logo.png')} style={{ width: 30, height: 30, marginRight: 10 }} />
             ),
             headerStyle: GlobalStyles.seccionesHeader,
             headerTintColor: '#fff', //color texto e iconos de la barra
@@ -50,12 +50,12 @@ export default function TabLayout() {
           options={{
             title: 'Escribir',
             headerShown: true,
-            tabBarIcon: ({ color }) => <Ionicons size={28} name="pencil" color={color}/>,
+            tabBarIcon: ({ color }) => <Ionicons size={23} name="pencil" color={color}/>,
             headerTitle: () => (
               <Text style={GlobalStyles.textoTitulo}>Lector NFC</Text>
             ),
             headerRight: () => (
-              <Image source={require('../../assets/images/logo.png')} style={{ width: 50, height: 50, marginRight: 10 }} />
+              <Image source={require('../../assets/images/logo.png')} style={{  width: 30, height: 30, marginRight: 10 }} />
             ),
             headerStyle: GlobalStyles.seccionesHeader,
             headerTintColor: '#fff', //color texto e iconos de la barra
@@ -67,12 +67,12 @@ export default function TabLayout() {
           options={{
             title: 'BBDD',
             headerShown: true,
-            tabBarIcon: ({ color }) => <Ionicons size={28} name="server" color={color}/>,
+            tabBarIcon: ({ color }) => <Ionicons size={23} name="server" color={color}/>,
             headerTitle: () => (
               <Text style={GlobalStyles.textoTitulo}>Lector NFC</Text>
             ),
             headerRight: () => (
-              <Image source={require('../../assets/images/logo.png')} style={{ width: 50, height: 50, marginRight: 10 }} />
+              <Image source={require('../../assets/images/logo.png')} style={{  width: 30, height:30, marginRight: 10 }} />
             ),
             headerStyle: GlobalStyles.seccionesHeader,
             headerTintColor: '#fff', //color texto e iconos de la barra
@@ -89,7 +89,7 @@ export default function TabLayout() {
               <Text style={GlobalStyles.textoTitulo}>Lector NFC</Text>
             ),
             headerRight: () => (
-              <Image source={require('../../assets/images/logo.png')} style={{ width: 50, height: 50, marginRight: 10 }} />
+              <Image source={require('../../assets/images/logo.png')} style={{  width: 30, height: 30, marginRight: 10 }} />
             ),
             headerStyle: GlobalStyles.seccionesHeader,
             headerTintColor: '#fff', //color texto e iconos de la barra

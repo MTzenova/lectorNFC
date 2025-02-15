@@ -14,7 +14,7 @@ const lector = () => {
         <Pressable onPress={()=>{router.push('/tabs/escribir')}}>
           <Image
             source={require('../../assets/images/nfc.png')}
-            style={[{ width: 400, height: 400 }]}/>
+            style={[{ width: 200, height: 200 }]}/>
         </Pressable>
 
       </View>
