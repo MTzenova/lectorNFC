@@ -46,12 +46,14 @@ export default function HomeScreen() {
     
         <View style={GlobalStyles.contendorInputLogin}>
           <Text style={GlobalStyles.textoEscrbir}>Usuario:</Text>
-          <TextInput style={GlobalStyles.inputLogin} placeholder='Introduce tu nombre de usuario...' placeholderTextColor={Colors.lightGrey}></TextInput>
+          <TextInput style={GlobalStyles.inputLogin} placeholder='Introduce tu nombre de usuario...' placeholderTextColor={Colors.lightGrey}
+          value={email} onChangeText={setEmail}></TextInput>
         </View>
     
         <View style={GlobalStyles.contendorInputLogin}>
           <Text style={GlobalStyles.textoEscrbir}>Contraseña:</Text>
-          <TextInput style={GlobalStyles.inputLogin} placeholder='Introduce tu contraseña...' secureTextEntry={true} placeholderTextColor={Colors.lightGrey}></TextInput>
+          <TextInput style={GlobalStyles.inputLogin} placeholder='Introduce tu contraseña...' 
+          secureTextEntry={true} placeholderTextColor={Colors.lightGrey}  value={password} onChangeText={setPassword}></TextInput>
         </View>
     
       </View>
@@ -60,11 +62,11 @@ export default function HomeScreen() {
 
      
       <Pressable onPress={() => { router.push('./tabs') }}>
-          <Text style={ GlobalStyles.boton} onPress={logIn}>ACCEDER</Text>
+          <Text style={GlobalStyles.boton} onPress={logIn}>ACCEDER</Text>
       </Pressable>
       
       <Pressable onPress={() => { router.push('../tabs/escribir') }}>
-        <Text style={GlobalStyles.textoBotonRegistrar}>Regístrate aquí</Text>
+        <Text style={GlobalStyles.textoBotonRegistrar} onPress={register}>Regístrate aquí</Text>
       </Pressable>
     </View>
       
