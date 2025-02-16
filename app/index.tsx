@@ -3,8 +3,35 @@ import { GlobalStyles } from '@/theme/GlobalStyles';
 import { router } from 'expo-router';
 import React from 'react';
 import { Colors } from '@/theme/Colors';
+import { Alert } from "react-native";
+import { useState } from "react";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '@/FireBaseconfig';
 
 export default function HomeScreen() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  
+  const logIn = async () => {
+    try {
+      const user = await (signInWithEmailAndPassword(auth,email,password));
+      if (user) router.replace('./tabs')
+    } catch (error:any) {
+      console.log(error);
+      Alert.alert("Inicio de sesión incorrecto", "error.message");
+    }
+  }
+
+
+  const register = async () => {
+    try {
+      const user = await (createUserWithEmailAndPassword(auth,email,password));
+      if (user) router.replace('./tabs');
+    } catch (error: any) {
+      console.log(error);
+      Alert.alert("Error al registrar el usuario", error.message);
+    }
+  }
   return (
     <View style={GlobalStyles.contenedorLogin}>
       <View style={GlobalStyles.contenedorCabeceraLogin}>
@@ -32,13 +59,12 @@ export default function HomeScreen() {
     <View style={GlobalStyles.botonesLogin}>
 
      
-          <Pressable onPress={() => { router.push('./tabs') }}>
-            <Text style={[, GlobalStyles.boton]}>ACCEDER</Text>
-          </Pressable>
+      <Pressable onPress={() => { router.push('./tabs') }}>
+          <Text style={ GlobalStyles.boton} onPress={logIn}>ACCEDER</Text>
+      </Pressable>
       
-
       <Pressable onPress={() => { router.push('../tabs/escribir') }}>
-                  <Text style={GlobalStyles.textoBotonRegistrar}>Regístrate aquí</Text>
+        <Text style={GlobalStyles.textoBotonRegistrar}>Regístrate aquí</Text>
       </Pressable>
     </View>
       
