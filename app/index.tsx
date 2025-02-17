@@ -46,7 +46,7 @@ export default function HomeScreen() {
     
         <View style={GlobalStyles.contendorInputLogin}>
           <Text style={GlobalStyles.textoEscrbir}>Usuario:</Text>
-          <TextInput style={GlobalStyles.inputLogin} placeholder='Introduce tu nombre de usuario...' placeholderTextColor={Colors.lightGrey}
+          <TextInput style={GlobalStyles.inputLogin} placeholder='ejemplo@gmail.com' placeholderTextColor={Colors.lightGrey}
           value={email} onChangeText={setEmail}></TextInput>
         </View>
     
