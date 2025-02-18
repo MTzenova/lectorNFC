@@ -36,6 +36,19 @@ textoBotonRegistrar:{
     textShadowOffset: { width: 3, height:3 },
     textShadowRadius: 1,
 },
+botonLimpiar:{
+    width: '40%',
+    height: 60,
+    textAlign: 'center',
+    padding:15,
+    borderRadius: 30,
+    borderWidth:2,
+    backgroundColor: Colors.darkGreen,
+    fontWeight:'bold',
+    color:Colors.white,
+    justifyContent: 'center', 
+    alignItems: 'center'
+},
 //barras
 seccionesHeader: {
     backgroundColor: Colors.darkGreen,
@@ -109,6 +122,11 @@ inputLogin: {
     width:'100%',
     height: 60,
     backgroundColor: Colors.white,
+},
+textoLimpiar:{
+    fontSize:20,
+    color:Colors.white,
+    fontWeight:'bold',   
 },
 //pantalla escribir
 contenedor:{
