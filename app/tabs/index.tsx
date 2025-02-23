@@ -35,7 +35,7 @@ const lector = () => {
         <Pressable onPress={()=>{router.push('/tabs/escribir')}}>
           <Image
             source={require('../../assets/images/nfc.png')}
-            style={[{ width: 200, height: 200 }]}/>
+            style={GlobalStyles.imagenNFC}/>
         </Pressable>
         <Pressable style={GlobalStyles.botonLimpiar} onPress={() =>setTag("")}>
         <Text style={GlobalStyles.textoLimpiar}>Limpiar</Text>

@@ -1,4 +1,4 @@
-import { View, Text, TextInput, FlatList } from 'react-native';
+import { View, Text, TextInput, FlatList, KeyboardAvoidingView, Platform } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '@/FireBaseconfig'; 
@@ -39,7 +39,7 @@ const BBDD = () => {
         fetchAlumnos();
     }, []);
 
-    // 📌 Función para filtrar por NRE
+    //Función para filtrar por NRE
     const handleSearch = (text: string) => {
         setSearch(text);
         if (text === '') {
@@ -53,32 +53,35 @@ const BBDD = () => {
     };
 
     return (
-        <View style={GlobalStyles.contenedor}>
-            {/* Buscador */}
-            <View style={GlobalStyles.contenedorBuscarBBDD}>
-                <Text style={[GlobalStyles.textoTituloBBDD]}>Base de datos de alumnos</Text>
-                <TextInput 
-                    style={GlobalStyles.inputBBDD} 
-                    placeholder='Buscar por NRE...' 
-                    placeholderTextColor={Colors.lightGrey}
-                    value={search}
-                    onChangeText={handleSearch}
-                />
+        <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={GlobalStyles.keyboard}>
+      
+          <View style={GlobalStyles.contenedor}>
+              {/* Buscador */}
+              <View style={GlobalStyles.contenedorBuscarBBDD}>
+                  <Text style={[GlobalStyles.textoTituloBBDD]}>Base de datos de alumnos</Text>
+                  <TextInput 
+                      style={GlobalStyles.inputBBDD} 
+                      placeholder='Buscar por NRE...' 
+                      placeholderTextColor={Colors.lightGrey}
+                      value={search}
+                      onChangeText={handleSearch}
+                  />
+              </View>
+
+              {/* Lista de alumnos */}
+              <View style={GlobalStyles.contenedorDatosBBDD}>
+                  <FlatList
+                      data={filteredAlumnos}
+                      keyExtractor={item => item.id}
+                      renderItem={({ item }) => (
+                          <Text style={GlobalStyles.textoEscrbir}>
+                              {item.nombre} {item.apellidos} - {item.grado} (NRE: {item.nre})
+                          </Text>
+                        )}/>
+              </View>
             </View>
 
-            {/* Lista de alumnos */}
-            <View style={GlobalStyles.contenedorDatos}>
-                <FlatList
-                    data={filteredAlumnos}
-                    keyExtractor={item => item.id}
-                    renderItem={({ item }) => (
-                        <Text style={GlobalStyles.textoEscrbir}>
-                            {item.nombre} {item.apellidos} - {item.grado} (NRE: {item.nre})
-                        </Text>
-                    )}
-                />
-            </View>
-        </View>
+        </KeyboardAvoidingView>
     );
 };
 

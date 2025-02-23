@@ -35,7 +35,7 @@ export default function HomeScreen() {
   return (
     <View style={GlobalStyles.contenedorLogin}>
       <View style={GlobalStyles.contenedorCabeceraLogin}>
-        <Image source={require('../assets/images/logo.png')} style={{width: 30, height: 30, alignSelf:'center', marginRight:'2%'}} />
+        <Image source={require('../assets/images/logo.png')} style={GlobalStyles.imagenLogo} />
 
         <Text style={GlobalStyles.textoTituloLogin}>Lector NFC</Text>
       </View>

@@ -61,6 +61,11 @@ seccionesFooter:{
 fuenteFooter:{
     fontSize:18,
 },
+imagenLogoHeader:{
+    width: 30,
+    height: 30,
+    marginRight: 10,
+},
 //pantalla login
 contenedorCabeceraLogin:{
     display:'flex',
@@ -127,6 +132,12 @@ textoLimpiar:{
     fontSize:20,
     color:Colors.white,
     fontWeight:'bold',   
+},
+imagenLogo:{
+    width: 30,
+    height: 30,
+    alignSelf:'center',
+    marginRight:'2%',
 },
 //pantalla escribir
 contenedor:{
@@ -228,13 +239,29 @@ textoBody: {
     textShadowRadius: 1,
     textAlign:'center'
 },
+imagenNFC:{
+    width: 200,
+    height: 200
+},
 //pantalla bbdd
-
 contenedorBuscarBBDD:{
     display:'flex',
     width:'80%',
     position:'absolute',
-    top:0
+    top:0,
+    zIndex: 1,
+},
+contenedorDatosBBDD:{
+    display:'flex',
+    justifyContent: 'center',
+    backgroundColor:Colors.white,
+    width:'80%',
+    borderWidth:3,
+    borderColor:Colors.darkGreen,
+    borderRadius:20,
+    marginBottom:'3%',
+    flexGrow: 1,
+    marginTop:'25%'
 },
 textoTituloBBDD:{
     fontSize:25,
@@ -257,4 +284,7 @@ inputBBDD: {
     height: 50,
     backgroundColor: Colors.white,
 },
+keyboard:{
+    flex: 1, 
+}
 })

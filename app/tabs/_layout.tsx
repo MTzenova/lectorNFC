@@ -37,7 +37,7 @@ export default function TabLayout() {
               <Text style={GlobalStyles.textoTitulo}>Lector NFC</Text>
             ),
             headerRight: () => (
-              <Image source={require('../../assets/images/logo.png')} style={{ width: 30, height: 30, marginRight: 10 }} />
+              <Image source={require('../../assets/images/logo.png')} style={GlobalStyles.imagenLogoHeader} />
             ),
             headerStyle: GlobalStyles.seccionesHeader,
             headerTintColor: '#fff', //color texto e iconos de la barra
@@ -55,7 +55,7 @@ export default function TabLayout() {
               <Text style={GlobalStyles.textoTitulo}>Lector NFC</Text>
             ),
             headerRight: () => (
-              <Image source={require('../../assets/images/logo.png')} style={{  width: 30, height: 30, marginRight: 10 }} />
+              <Image source={require('../../assets/images/logo.png')} style={GlobalStyles.imagenLogoHeader} />
             ),
             headerStyle: GlobalStyles.seccionesHeader,
             headerTintColor: '#fff', //color texto e iconos de la barra
@@ -72,7 +72,7 @@ export default function TabLayout() {
               <Text style={GlobalStyles.textoTitulo}>Lector NFC</Text>
             ),
             headerRight: () => (
-              <Image source={require('../../assets/images/logo.png')} style={{  width: 30, height:30, marginRight: 10 }} />
+              <Image source={require('../../assets/images/logo.png')} style={GlobalStyles.imagenLogoHeader} />
             ),
             headerStyle: GlobalStyles.seccionesHeader,
             headerTintColor: '#fff', //color texto e iconos de la barra
@@ -89,7 +89,7 @@ export default function TabLayout() {
               <Text style={GlobalStyles.textoTitulo}>Lector NFC</Text>
             ),
             headerRight: () => (
-              <Image source={require('../../assets/images/logo.png')} style={{  width: 30, height: 30, marginRight: 10 }} />
+              <Image source={require('../../assets/images/logo.png')} style={GlobalStyles.imagenLogoHeader} />
             ),
             headerStyle: GlobalStyles.seccionesHeader,
             headerTintColor: '#fff', //color texto e iconos de la barra
