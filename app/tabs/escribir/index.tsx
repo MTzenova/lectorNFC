@@ -3,14 +3,12 @@ import { View, Text, TextInput, Image, Pressable, ScrollView, Alert } from 'reac
 import { router } from 'expo-router';
 import { GlobalStyles } from '@/theme/GlobalStyles';
 import { Colors } from '@/theme/Colors';
-
-
-
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '@/FireBaseconfig';
+import { useTarjetaStore } from '@/store/useTarjetaStore';
 
 const escribir = () => {
-
+  const {tarjeta} = useTarjetaStore();
   const [nre, setNre] = useState("");
   const [nombre, setNombre] = useState("");
   const [apellidos, setApellidos] = useState("");
@@ -52,7 +50,7 @@ const escribir = () => {
 
           <View style={GlobalStyles.contenedorNTarjeta}>
             <Text style={GlobalStyles.textoEscrbir}>Nº Tarjeta:</Text>
-            <Text style={[GlobalStyles.textoEscrbir, { marginLeft: '9%' }]}>A:1:12:B3:4C</Text>
+            <Text style={[GlobalStyles.textoEscrbir, { marginLeft: '9%' }]}>{tarjeta}</Text>
           </View>
 
           <View style={GlobalStyles.contendorInput}>

@@ -4,15 +4,19 @@ import NfcManager, { NfcTech } from "react-native-nfc-manager";
 import { useEffect, useState } from 'react';
 import { GlobalStyles } from '@/theme/GlobalStyles';
 import { router } from 'expo-router';
+import { useTarjetaStore } from '@/store/useTarjetaStore';
 
 const lector = () => {
+  const{setTarjeta} = useTarjetaStore();
   const [tag, setTag] = useState("");
 
   const readNFT = async () => {
     try {
       await NfcManager.requestTechnology(NfcTech.Ndef);
       const data = await NfcManager.getTag();
-      setTag(JSON.stringify(data, null, 2));
+      const tarjetaID = JSON.stringify(data,null,2);
+      setTag(tarjetaID);
+      setTarjeta(tarjetaID);
     }catch (ex) {
       console.warn("ERROR", ex)
     } finally {
