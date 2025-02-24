@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, Image, Pressable, ScrollView, Alert } from 'react-native';
 import { router } from 'expo-router';
 import { GlobalStyles } from '@/theme/GlobalStyles';
@@ -8,22 +8,48 @@ import { db } from '@/FireBaseconfig';
 import { useTarjetaStore } from '@/store/useTarjetaStore';
 
 const escribir = () => {
-  const {tarjeta} = useTarjetaStore();
+  // Obtener tarjeta y la función procesarTarjeta del store
+  const { tarjeta, procesarTarjeta } = useTarjetaStore();
   const [nre, setNre] = useState("");
   const [nombre, setNombre] = useState("");
   const [apellidos, setApellidos] = useState("");
   const [grado, setGrado] = useState("");
-
+  
+  // Extraer solo el valor del ID
+  const extraerValorID = (texto: string) => {
+    // Si el texto ya está procesado por procesarTarjeta
+    if (texto.includes('"id":')) {
+      // Buscar la posición después de "id":
+      const inicioValor = texto.indexOf('"id":') + 5;
+      // Encontrar el final del valor (siguiente coma o })
+      let finValor = texto.indexOf(',', inicioValor);
+      if (finValor === -1) {
+        finValor = texto.indexOf('}', inicioValor);
+      }
+      if (finValor === -1) {
+        finValor = texto.length;
+      }
+      
+      // Extraer solo el valor y eliminar comillas si las tiene
+      let valorID = texto.substring(inicioValor, finValor).trim();
+      if (valorID.startsWith('"') && valorID.endsWith('"')) {
+        valorID = valorID.substring(1, valorID.length - 1);
+      }
+      return valorID;
+    }
+    return texto;
+  };
   
   const guardarDatos = async () => {
-   
     if (!nre || !nombre || !apellidos || !grado) {
       Alert.alert("Error", "Por favor, completa todos los campos");
       return;
     }
     try {
+      const valorIDTarjeta = extraerValorID(tarjeta);
       
       await addDoc(collection(db, "usuarios"), {
+        tarjeta: valorIDTarjeta,
         nre,
         nombre,
         apellidos,
@@ -35,8 +61,8 @@ const escribir = () => {
       console.error("Error al guardar los datos:", error);
       Alert.alert("Error", "No se pudieron guardar los datos");
     }
-    
   };
+
   return (
     <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
       <View style={GlobalStyles.contenedor}>
@@ -50,7 +76,9 @@ const escribir = () => {
 
           <View style={GlobalStyles.contenedorNTarjeta}>
             <Text style={GlobalStyles.textoEscrbir}>Nº Tarjeta:</Text>
-            <Text style={[GlobalStyles.textoEscrbir, { marginLeft: '9%' }]}>{tarjeta}</Text>
+            <Text style={[GlobalStyles.textoEscrbir, { marginLeft: '9%' }]}>
+              {extraerValorID(tarjeta)}
+            </Text>
           </View>
 
           <View style={GlobalStyles.contendorInput}>
@@ -105,7 +133,7 @@ const escribir = () => {
         </View>
       </View>
     </ScrollView>
-  )
-  }
+  );
+};
   
-export default escribir
+export default escribir;
