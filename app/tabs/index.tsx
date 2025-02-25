@@ -7,7 +7,7 @@ import { router } from 'expo-router';
 import { useTarjetaStore } from '@/store/useTarjetaStore';
 
 const lector = () => {
-  const{setTarjeta} = useTarjetaStore();
+  const{setTarjeta, nre, nombre, apellidos, grado} = useTarjetaStore();
   const [tag, setTag] = useState("");
 
   const readNFT = async () => {
@@ -38,7 +38,7 @@ const lector = () => {
 
   return (
     <View style={GlobalStyles.container}>
-
+  {tag && <Text>{tag}</Text>}
       <View style={[GlobalStyles.containerCentrado]}>
 
         <Text style={GlobalStyles.textoBody}>ACERQUE SU TARJETA NFC...</Text>
