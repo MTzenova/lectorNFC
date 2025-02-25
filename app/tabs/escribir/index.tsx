@@ -122,7 +122,7 @@ const grabarTarjetaNFC = async() => {
             <Text style={GlobalStyles.textoEscrbir}>NRE:</Text>
             <TextInput 
               style={GlobalStyles.input} 
-              placeholder={nreState || '1234567'} 
+              placeholder={nreState} 
               placeholderTextColor={Colors.lightGrey}
               value={nreState}
               onChangeText={setNre}
@@ -133,7 +133,7 @@ const grabarTarjetaNFC = async() => {
             <Text style={GlobalStyles.textoEscrbir}>Nombre:</Text>
             <TextInput 
               style={GlobalStyles.input} 
-              placeholder={nombreState || 'Antonio'}
+              placeholder={nombre}
               placeholderTextColor={Colors.lightGrey}
               value={nombreState}
               onChangeText={setNombre}
@@ -144,7 +144,7 @@ const grabarTarjetaNFC = async() => {
             <Text style={GlobalStyles.textoEscrbir}>Apellidos:</Text>
             <TextInput 
               style={GlobalStyles.input} 
-              placeholder={apellidosState || 'Morales García'}
+              placeholder={apellidosState}
               placeholderTextColor={Colors.lightGrey}
               value={apellidosState}
               onChangeText={setApellidos}
@@ -155,7 +155,7 @@ const grabarTarjetaNFC = async() => {
             <Text style={GlobalStyles.textoEscrbir}>Grado:</Text>
             <TextInput 
               style={GlobalStyles.input} 
-              placeholder={gradoState || '2ºDAM'} 
+              placeholder={gradoState} 
               placeholderTextColor={Colors.lightGrey}
               value={gradoState}
               onChangeText={setGrado}
