@@ -36,15 +36,17 @@ const lector = () => {
       <View style={[GlobalStyles.containerCentrado]}>
 
         <Text style={GlobalStyles.textoBody}>ACERQUE SU TARJETA NFC...</Text>
-
-        <Pressable onPress={()=>{router.push('/tabs/escribir')}}>
-          <Image
+       
+        <Image
             source={require('../../assets/images/nfc.png')}
             style={GlobalStyles.imagenNFC}/>
+        
+        <Pressable onPress={readNFT} style={GlobalStyles.boton}>
+          <Text style={GlobalStyles.textoLimpiar}>Leer</Text>
         </Pressable>
         <Pressable style={GlobalStyles.botonLimpiar} onPress={() =>setTag("")}>
-        <Text style={GlobalStyles.textoLimpiar}>Limpiar</Text>
-      </Pressable>
+          <Text style={GlobalStyles.textoLimpiar}>Limpiar</Text>
+        </Pressable>
 
       </View>
       
