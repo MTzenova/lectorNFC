@@ -26,10 +26,6 @@ const lector = () => {
 
   };
 
-  useEffect(() => {
-    readNFT();
-  }, [])
-
   return (
     <View style={GlobalStyles.container}>
 
@@ -41,7 +37,7 @@ const lector = () => {
             source={require('../../assets/images/nfc.png')}
             style={GlobalStyles.imagenNFC}/>
         
-        <Pressable onPress={readNFT} style={GlobalStyles.boton}>
+        <Pressable onPress={readNFT} style={[GlobalStyles.boton,GlobalStyles.botonGuardar]}>
           <Text style={GlobalStyles.textoLimpiar}>Leer</Text>
         </Pressable>
         <Pressable style={GlobalStyles.botonLimpiar} onPress={() =>setTag("")}>
