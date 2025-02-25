@@ -12,7 +12,8 @@ const lector = () => {
 
   const readNFT = async () => {
     try {
-      await NfcManager.requestTechnology(NfcTech.Ndef);
+      const user = await NfcManager.requestTechnology(NfcTech.Ndef);
+      if(user) router.replace('/tabs/escribir')
       const data = await NfcManager.getTag();
       const tarjetaID = JSON.stringify(data,null,2);
       setTag(tarjetaID);
@@ -36,7 +37,7 @@ const lector = () => {
 
         <Text style={GlobalStyles.textoBody}>ACERQUE SU TARJETA NFC...</Text>
 
-        <Pressable onPress={readNFT}>
+        <Pressable onPress={()=>{router.push('/tabs/escribir')}}>
           <Image
             source={require('../../assets/images/nfc.png')}
             style={GlobalStyles.imagenNFC}/>
