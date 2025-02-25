@@ -48,7 +48,7 @@ const lector = () => {
             style={GlobalStyles.imagenNFC}/>
         
         <Pressable onPress={readNFT} style={[GlobalStyles.boton,GlobalStyles.botonLimpiar]}>
-          <Text style={GlobalStyles.textoLimpiar}>Leer</Text>
+          <Text style={GlobalStyles.textoLimpiar}>Escribir</Text>
         </Pressable>
         <Pressable style={GlobalStyles.botonLimpiar} onPress={() =>setTag("")}>
           <Text style={GlobalStyles.textoLimpiar}>Limpiar</Text>
