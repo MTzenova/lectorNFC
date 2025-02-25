@@ -36,7 +36,7 @@ const lector = () => {
 
         <Text style={GlobalStyles.textoBody}>ACERQUE SU TARJETA NFC...</Text>
 
-        <Pressable onPress={()=>{router.push('/tabs/escribir')}}>
+        <Pressable onPress={readNFT}>
           <Image
             source={require('../../assets/images/nfc.png')}
             style={GlobalStyles.imagenNFC}/>
