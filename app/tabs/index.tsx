@@ -13,11 +13,17 @@ const lector = () => {
   const readNFT = async () => {
     try {
       const user = await NfcManager.requestTechnology(NfcTech.Ndef);
-      if(user) router.push('/tabs/escribir');
+      if(user)
+      { await NfcManager.close(); // Cierra la conexión NFC antes de cambiar de pantalla
+        NfcManager.cancelTechnologyRequest(); // Cancela cualquier solicitud pendiente
+        router.push('/tabs/escribir');
+        return;
+      } // Detiene la ejecución};
       const data = await NfcManager.getTag();
       const tarjetaID = JSON.stringify(data,null,2);
       setTag(tarjetaID);
       setTarjeta(tarjetaID);
+      await NfcManager.close();
     }catch (ex) {
       console.warn("ERROR", ex)
     } finally {
