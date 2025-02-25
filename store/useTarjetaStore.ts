@@ -8,6 +8,10 @@ type TarjetaState = {
   grado: string;
   setTarjeta: (tarjeta: string) => void;
   procesarTarjeta: (data: string) => void;
+  setNre: (nre: string) => void;
+  setNombre: (nombre: string) => void;
+  setApellidos: (apellidos: string) => void;
+  setGrado: (grado: string) => void;
 };
 
 export const useTarjetaStore = create<TarjetaState>((set) => ({
@@ -17,6 +21,10 @@ export const useTarjetaStore = create<TarjetaState>((set) => ({
   apellidos: "",
   grado: "",
   setTarjeta: (tarjeta) => set({ tarjeta }),
+  setNre: (nre) => set({ nre }),
+  setNombre: (nombre) => set({ nombre }),
+  setApellidos: (apellidos) => set({ apellidos }),
+  setGrado: (grado) => set({ grado }),
   procesarTarjeta: (data: string) => {
     // Inicializar un objeto con valores por defecto
     let nre = "", nombre = "", apellidos = "", grado = "", tarjeta = "";

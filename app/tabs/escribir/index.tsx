@@ -10,14 +10,14 @@ import NfcManager, { NfcTech, Ndef } from 'react-native-nfc-manager';
 
 const escribir = () => {
   // Obtener tarjeta y la función procesarTarjeta del store
-  const { tarjeta, procesarTarjeta } = useTarjetaStore();
-  const [nre, setNre] = useState("");
-  const [nombre, setNombre] = useState("");
-  const [apellidos, setApellidos] = useState("");
-  const [grado, setGrado] = useState("");
+  const { tarjeta, procesarTarjeta, nre, nombre, apellidos, grado, setTarjeta } = useTarjetaStore();
+  const [nreState, setNre] = useState("");
+  const [nombreState, setNombre] = useState("");
+  const [apellidosState, setApellidos] = useState("");
+  const [gradoState, setGrado] = useState("");
   
 const grabarTarjetaNFC = async() => {
-  if (!nre || !nombre || !apellidos || !grado) {
+  if (!nreState || !nombreState || !apellidosState || !gradoState) {
       Alert.alert("Error", "Por favor, completa todos los campos antes de grabar la tarjeta.");
       return;
   }
@@ -25,10 +25,10 @@ const grabarTarjetaNFC = async() => {
     await NfcManager.requestTechnology(NfcTech.Ndef);
    
     const mensaje = JSON.stringify({
-      nre,
-      nombre,
-      apellidos,
-      grado
+      nre: nreState,
+      nombre: nombreState,
+      apellidos: apellidosState,
+      grado: gradoState
     });
 
     const bytes = Ndef.encodeMessage([Ndef.textRecord(mensaje)]);
@@ -50,6 +50,8 @@ const grabarTarjetaNFC = async() => {
   }
   };
 
+
+  
   // Extraer solo el valor del ID
   const extraerValorID = (texto: string) => {
     // Si el texto ya está procesado por procesarTarjeta
@@ -76,22 +78,22 @@ const grabarTarjetaNFC = async() => {
   };
   
   const guardarDatos = async () => {
-    if (!nre || !nombre || !apellidos || !grado) {
+    if (!nreState || !nombreState || !apellidosState || !gradoState) {
       Alert.alert("Error", "Por favor, completa todos los campos");
       return;
     }
+
     try {
-      const valorIDTarjeta = extraerValorID(tarjeta);
-      
+      const valorIDTarjeta = tarjeta; // Aquí ya tienes la tarjeta completa
       await addDoc(collection(db, "usuarios"), {
         tarjeta: valorIDTarjeta,
-        nre,
-        nombre,
-        apellidos,
-        grado,
+        nre: nreState,
+        nombre: nombreState,
+        apellidos: apellidosState,
+        grado: gradoState,
       });
       Alert.alert("Éxito", "Datos guardados correctamente");
-      router.push('../'); 
+      router.push('../');
     } catch (error) {
       console.error("Error al guardar los datos:", error);
       Alert.alert("Error", "No se pudieron guardar los datos");
@@ -120,9 +122,9 @@ const grabarTarjetaNFC = async() => {
             <Text style={GlobalStyles.textoEscrbir}>NRE:</Text>
             <TextInput 
               style={GlobalStyles.input} 
-              placeholder='1234567' 
+              placeholder={nre || '1234567'} 
               placeholderTextColor={Colors.lightGrey}
-              value={nre}
+              value={nreState}
               onChangeText={setNre}
             />
           </View>
@@ -131,9 +133,9 @@ const grabarTarjetaNFC = async() => {
             <Text style={GlobalStyles.textoEscrbir}>Nombre:</Text>
             <TextInput 
               style={GlobalStyles.input} 
-              placeholder='Antonio' 
+              placeholder={nombre || 'Antonio'}
               placeholderTextColor={Colors.lightGrey}
-              value={nombre}
+              value={nombreState}
               onChangeText={setNombre}
             />
           </View>
@@ -142,9 +144,9 @@ const grabarTarjetaNFC = async() => {
             <Text style={GlobalStyles.textoEscrbir}>Apellidos:</Text>
             <TextInput 
               style={GlobalStyles.input} 
-              placeholder='Morales García' 
+              placeholder={apellidos || 'Morales García'}
               placeholderTextColor={Colors.lightGrey}
-              value={apellidos}
+              value={apellidosState}
               onChangeText={setApellidos}
             />
           </View>
@@ -153,16 +155,16 @@ const grabarTarjetaNFC = async() => {
             <Text style={GlobalStyles.textoEscrbir}>Grado:</Text>
             <TextInput 
               style={GlobalStyles.input} 
-              placeholder='2ºDAM' 
+              placeholder={grado || '2ºDAM'} 
               placeholderTextColor={Colors.lightGrey}
-              value={grado}
+              value={gradoState}
               onChangeText={setGrado}
             />
           </View>
         </View>
 
         <View style={GlobalStyles.botonGuardar}>
-          <Pressable onPress={async () => {await guardarDatos(); grabarTarjetaNFC();}}>
+          <Pressable onPress={async () => {await guardarDatos(); await grabarTarjetaNFC();}}>
             <Text style={GlobalStyles.boton}>GUARDAR</Text>
           </Pressable>
         </View>
