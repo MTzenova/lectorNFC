@@ -13,7 +13,7 @@ const lector = () => {
   const readNFT = async () => {
     try {
       const user = await NfcManager.requestTechnology(NfcTech.Ndef);
-      if(user) router.replace('/tabs/escribir')
+      if(user) router.push('/tabs/escribir');
       const data = await NfcManager.getTag();
       const tarjetaID = JSON.stringify(data,null,2);
       setTag(tarjetaID);
@@ -37,7 +37,7 @@ const lector = () => {
             source={require('../../assets/images/nfc.png')}
             style={GlobalStyles.imagenNFC}/>
         
-        <Pressable onPress={readNFT} style={[GlobalStyles.boton,GlobalStyles.botonGuardar]}>
+        <Pressable onPress={readNFT} style={[GlobalStyles.boton,GlobalStyles.botonLimpiar]}>
           <Text style={GlobalStyles.textoLimpiar}>Leer</Text>
         </Pressable>
         <Pressable style={GlobalStyles.botonLimpiar} onPress={() =>setTag("")}>
