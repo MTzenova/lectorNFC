@@ -162,7 +162,7 @@ const grabarTarjetaNFC = async() => {
         </View>
 
         <View style={GlobalStyles.botonGuardar}>
-          <Pressable  onPress={() => { guardarDatos(); grabarTarjetaNFC();}}>
+          <Pressable onPress={async () => {await guardarDatos(); grabarTarjetaNFC();}}>
             <Text style={GlobalStyles.boton}>GUARDAR</Text>
           </Pressable>
         </View>
