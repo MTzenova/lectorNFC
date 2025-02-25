@@ -32,7 +32,7 @@ const lector = () => {
 
   return (
     <View style={GlobalStyles.container}>
-      <Text>{tag}</Text>
+
       <View style={[GlobalStyles.containerCentrado]}>
 
         <Text style={GlobalStyles.textoBody}>ACERQUE SU TARJETA NFC...</Text>
