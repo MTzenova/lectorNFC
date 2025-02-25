@@ -6,6 +6,7 @@ import { Colors } from '@/theme/Colors';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '@/FireBaseconfig';
 import { useTarjetaStore } from '@/store/useTarjetaStore';
+import NfcManager, { NfcTech, Ndef } from 'react-native-nfc-manager';
 
 const escribir = () => {
   // Obtener tarjeta y la función procesarTarjeta del store
@@ -15,6 +16,40 @@ const escribir = () => {
   const [apellidos, setApellidos] = useState("");
   const [grado, setGrado] = useState("");
   
+const grabarTarjetaNFC = async() => {
+  if (!nre || !nombre || !apellidos || !grado) {
+      Alert.alert("Error", "Por favor, completa todos los campos antes de grabar la tarjeta.");
+      return;
+  }
+  try {
+    await NfcManager.requestTechnology(NfcTech.Ndef);
+   
+    const mensaje = JSON.stringify({
+      nre,
+      nombre,
+      apellidos,
+      grado
+    });
+
+    const bytes = Ndef.encodeMessage([Ndef.textRecord(mensaje)]);
+
+    if (bytes) {
+      await NfcManager.ndefHandler.writeNdefMessage(bytes);
+      Alert.alert("Éxito", "Datos escritos en la tarjeta NFC");
+    } else {
+      Alert.alert("Error", "No se pudo codificar el mensaje.");
+    } 
+  await NfcManager.close();
+  } 
+    catch (ex) {
+      console.warn("ERROR al escribir en NFC:", ex);
+      Alert.alert("Error", "Hubo un problema al escribir en la tarjeta NFC.");
+  } 
+    finally {
+      NfcManager.cancelTechnologyRequest();
+  }
+  };
+
   // Extraer solo el valor del ID
   const extraerValorID = (texto: string) => {
     // Si el texto ya está procesado por procesarTarjeta
@@ -127,7 +162,7 @@ const escribir = () => {
         </View>
 
         <View style={GlobalStyles.botonGuardar}>
-          <Pressable onPress={guardarDatos}>
+          <Pressable  onPress={() => { guardarDatos(); grabarTarjetaNFC();}}>
             <Text style={GlobalStyles.boton}>GUARDAR</Text>
           </Pressable>
         </View>
