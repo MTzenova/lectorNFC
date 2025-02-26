@@ -23,13 +23,11 @@ const lector = () => {
         NfcManager.cancelTechnologyRequest();
         
         router.push('/tabs/escribir');
-      }else{
-
-        const tarjetaID = JSON.stringify(data,null,2);
+      }
+      const tarjetaID = JSON.stringify(data,null,2);
         setTag(tarjetaID);
         setTarjeta(tarjetaID);
         await NfcManager.close();
-      }
 
       
     }catch (ex) {
