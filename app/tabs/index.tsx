@@ -22,12 +22,16 @@ const lector = () => {
         await NfcManager.close();
         NfcManager.cancelTechnologyRequest();
         
-        router.push('/tabs/escribir');}
+        router.push('/tabs/escribir');
+      }else{
 
-      const tarjetaID = JSON.stringify(data,null,2);
-      setTag(tarjetaID);
-      setTarjeta(tarjetaID);
-      await NfcManager.close();
+        const tarjetaID = JSON.stringify(data,null,2);
+        setTag(tarjetaID);
+        setTarjeta(tarjetaID);
+        await NfcManager.close();
+      }
+
+      
     }catch (ex) {
       console.warn("ERROR", ex)
     } finally {
